@@ -1,0 +1,32 @@
+info:
+    app:
+        description: Master Spring Boot
+        name: Spring Boot Master Class Course
+        version: 1.0.0
+management:
+    endpoints:
+        health:
+            show-details: always
+        web:
+            exposure:
+                include: health,info,prometheus
+server:
+    error:
+        include-binding-errors: always
+        include-message: always
+        include-stacktrace: ON_PARAM
+spring:
+    datasource:
+        driverClassName: org.h2.Driver
+        password: ''
+        url: jdbc:h2:mem:testdb
+        username: sa
+    h2:
+        console:
+            enabled: true
+            path: /h2
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        show-sql: true
+    main:
+        banner-mode: 'off'
